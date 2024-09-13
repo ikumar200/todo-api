@@ -8,13 +8,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id Int @id @default(autoincrement())
-  name String
-  email String @unique
-  passowrd String
-  todos Todo[]
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String  // Corrected the typo here
+  todos    Todo[]
 }
+
 
 model Todo{
   id Int @id @default(autoincrement())

@@ -1,12 +1,13 @@
-const express=require('express');
-const config=require("dotenv");
-const app=express();
-config();
-const authRoutes="./routes/authRoutes";
-const toDoRoutes="./routes/toDoRoutes";
+const express = require('express');
+const app = express();
+
+const authRoutes = require("./routes/authRoutes");
+const toDoRoutes = require("./routes/toDoRoutes");
+
 app.use(express.json());
 
-app.use("/auth",authRoutes);
-app.use("/todos",toDoRoutes);
+app.use("/auth", authRoutes);
+app.use("/todos", toDoRoutes);
 
-export default app
+// Export the app using module.exports
+module.exports = app;
